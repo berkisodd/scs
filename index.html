@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Camp Schedule — live countdown to your next activity</title>
+<title>🏕️ Camp Schedule — live countdown to your next activity</title>
 <meta name="theme-color" content="#0A0A0B">
 <meta name="description" content="Your camp schedule, with a live countdown to whatever's next.">
 
@@ -2035,9 +2035,11 @@
 
   // Activity colors. Muted enough to sit quietly next to the amber "now"
   // accent rather than compete with it.
+  // A camp-flavored palette: campfire, pine, lake, sunflower, berry,
+  // canvas tent, dusk sky, bark — instead of generic app colors.
   const CLASS_COLORS = [
-    '#D97435', '#4FA97F', '#5B8FD9', '#B876D9',
-    '#D9564E', '#D9C355', '#7A8A99', '#C97AA8'
+    '#E0822C', '#3F9E6A', '#4FA8D9', '#E0B93A',
+    '#D9564E', '#C9A063', '#9B72E0', '#8C6142'
   ];
   let selectedColor = null;
   let editingId = null; // null = adding new, else id of period being edited
@@ -3185,7 +3187,9 @@ Wed: OFF
     try{ return localStorage.getItem(THEME_KEY) || 'system'; } catch(e){ return 'system'; }
   }
   function getAccentPref(){
-    try{ return localStorage.getItem(ACCENT_KEY) || 'default'; } catch(e){ return 'default'; }
+    // Defaults to the "green" accent (unset users get a camp-green look
+    // out of the box); anyone can still switch back to Amber in Settings.
+    try{ return localStorage.getItem(ACCENT_KEY) || 'green'; } catch(e){ return 'green'; }
   }
   function applyTheme(pref){
     let themeAttr;
